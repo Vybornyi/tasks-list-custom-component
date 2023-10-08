@@ -1,43 +1,5 @@
 body{
-  padding: 0;
-  margin: 0;
-}
-*{
   box-sizing: border-box;
-}
-.tasks-list{
-  height: 100vh;
-  width: 100%;
-  background-color: #81B29A;
-  padding:  5%;
-}
-.task{
-  padding:   1em ;
-  width: 100%;
-  background-color: #F4F1DE;
-  display: flex;
-  align-items: center;
-  border: 3px solid #3D405B;
-  border-radius: 15px;
-  justify-content: space-between;
-
-}
-.tasks-list__status-item{
-  border: 2px solid #3D405B;
-  background-color: #E07A5F;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3em;
-  color:aliceblue
-}
-.tasks-list__status-item_checked{
-  background-color: #81B29A;
-  
-}
-.tasks-list__info-wrapper{
-  width: 70%;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
 }
