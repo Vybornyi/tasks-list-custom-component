@@ -1,5 +1,5 @@
-import { getTasksData } from "../../gateway/index.js";
-import { TaskElement } from '../Task/Task.js'
+import { getTasksData } from '../../gateway/index';
+import TaskElement from '../Task/Task';
 
 const template = document.createElement('template');
 
@@ -9,13 +9,14 @@ template.innerHTML = `
       display: flex;
       flex-direction: column;
       max-width: 100%;
+      min-height: 100vh;
       padding: 5% 10%;
       background-color: #3D405B;
     }
   </style>
     <section></section>
-`
-class TasksListElement extends HTMLElement {
+`;
+export default class TasksListElement extends HTMLElement {
   constructor() {
     super();
     this.tasksList = [];
@@ -23,7 +24,7 @@ class TasksListElement extends HTMLElement {
     const shadowRoot = this.attachShadow({ mode: 'open' });
 
     shadowRoot.appendChild(template.content.cloneNode(true));
-    this.section = shadowRoot.querySelector("section");
+    this.section = shadowRoot.querySelector('section');
   }
 
   renderTasks() {
@@ -41,10 +42,9 @@ class TasksListElement extends HTMLElement {
 
   connectedCallback() {
     this.getTasksList().then(() => {
-      if (this.tasksList)
+      if (this.tasksList) {
         this.renderTasks();
+      }
     });
   }
 }
-
-window.customElements.define("tasks-list", TasksListElement);
